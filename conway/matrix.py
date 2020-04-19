@@ -4,12 +4,21 @@ import random
 
 class Matrix(object):
     def __init__(self, file=None, width=None, height=None, population=None):
-        # TODO: handle file
+        self._population = population
+
         if not file:
             self._lines = width
             self._columns = height
-            self._population = population
             self._matrix = self._create_matrix()
+        else:
+            with open(file) as matrix:
+
+                self._matrix = [
+                    list(line.replace("1", "#").replace("0", " "))
+                    for line in matrix.read().split("\n")
+                ]
+                self._columns = len(self._matrix[0])
+                self._lines = len(self._matrix)
 
     def print(self):
         for line in self._matrix:
@@ -43,9 +52,9 @@ class Matrix(object):
                 )
                 neighbours_size = len(neighbours.replace(" ", ""))
 
-                if neighbours_size > 4:
-                    result_matrix[line_index][column_index] = " "
-                elif neighbours_size >= 2:
+                if neighbours_size == 2 and matrix[line_index][column_index] == "#":
+                    result_matrix[line_index][column_index] = "#"
+                elif neighbours_size == 3:
                     result_matrix[line_index][column_index] = "#"
                 else:
                     result_matrix[line_index][column_index] = " "

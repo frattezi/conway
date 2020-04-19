@@ -9,10 +9,12 @@ from conway.game_of_life import GameOfLife
 
 
 def main():
-    columns, lines = 106, 70
-    print(sys.argv)
-    initial_population = int(sys.argv[1])
-    matrix = Matrix(width=columns, height=lines, population=initial_population)
+    if len(sys.argv) < 2:
+        columns, lines = 40, 80
+        matrix = Matrix(width=columns, height=lines, population=10000)
+    else:
+        file_path = sys.argv[1]
+        matrix = Matrix(file=file_path)
 
     GameOfLife(matrix).start()
 
