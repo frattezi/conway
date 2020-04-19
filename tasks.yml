@@ -20,9 +20,9 @@ install:
   - pip install -e .
 
 run:
-  - conway 20
+  - conway glinder_gun.txt
 
-format:
+black:
   - black conway
 
 doc:
