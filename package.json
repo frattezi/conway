@@ -1,0 +1,46 @@
+{
+  "name": "base-react-parcel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@gitlab.com:tremtec/projects/base-react-parcel.git",
+  "author": "Rafael Vieira <rafaellvs322@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel src/assets/index.pug",
+    "build": "parcel build src/assets/index.pug",
+    "lint": "eslint src/**/*.js",
+    "test": "echo 'You need to create some tests!'"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-hook-form": "^5.3.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "styled-components": "^5.0.1",
+    "styled-loaders-react": "^1.1.0",
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-standard": "^4.0.1",
+    "parcel-bundler": "^1.12.4",
+    "pug": "^2.0.4"
+  },
+  "alias": {
+    "app": "./src/app",
+    "assets": "./src/assets"
+  },
+  "browserslist": [
+    "last 1 Chrome versions"
+  ]
+}
