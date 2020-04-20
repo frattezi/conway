@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { actionsWithDispatch, initialState } from './actions'
 import reducer from './reducer'
 
-export const useGithub = () => {
-  const state = useSelector(state => state.github)
+export const useTheme = () => {
+  const state = useSelector(state => state.theme)
   const dispatch = useDispatch()
 
   const actions = actionsWithDispatch(dispatch, state)

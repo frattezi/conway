@@ -9,6 +9,7 @@ import lightTheme from 'app/themes/light'
 import Router from 'app/components/Router'
 import GlobalStyles from 'app/helpers/globalStyles'
 import { generateStore } from 'app/redux'
+import {  useTheme } from 'app/redux/theme'
 import { Provider } from 'react-redux'
 
 WebFont.load({
@@ -22,14 +23,15 @@ WebFont.load({
 })
 const App = () => {
   const store = generateStore()
-  
+  const { isDarkMode } = useTheme()
+
   return (
-    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-      <Provider store={store}>
+    <Provider store={store}>
+      <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
         <GlobalStyles />
-        <Router setIsDarkMode={setIsDarkMode} />
-      </Provider>
-    </ThemeProvider>
+        <Router />
+      </ThemeProvider>
+    </Provider>
   )
 }
 
